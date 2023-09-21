@@ -1,3 +1,7 @@
+import $header from '../components/header';
+
 export default function () {
-    return <></>;
+    return <>
+        <$header />
+    </>;
 };
