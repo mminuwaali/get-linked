@@ -1,0 +1,99 @@
+div.portfolio-card
+    gap: 2em
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    padding: 3em 12%
+    position: relative
+
+    &::before, &::after
+        z-index: 0
+        content: ''
+        aspect-ratio: 1
+        filter: blur(5em)
+        position: absolute
+        border-radius: 50%
+        width: max(40vw, 50vh)
+        background: radial-gradient(circle at 50%, var(--pale-blue), var(--dark-blue), var(--dark-blue))
+
+    &:nth-child(even)
+        flex-direction: row-reverse
+
+    &:nth-child(1), &:nth-child(2)
+        &::after
+            display: none
+
+    &:nth-child(1)
+        &::before
+            left: 0
+            top: 80%
+
+    &:nth-child(2)
+        &::before
+            top: 80%
+            left: 100%
+            transform: translate(-50%, -50%)
+
+    &:nth-child(3)
+        &::before
+            left: 0
+            top: 80%
+            transform: translate(0%, -50%)
+
+        &::after
+            top: 95%
+            left: 100%
+            transform: translate(-50%, -50%)
+
+    .flex
+        gap: .5em
+        z-index: 1
+        display: flex
+        flex: 1 0 20em
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            align-items: center
+
+        img
+            width: 80%
+            height: 100%
+            margin: auto
+            object-fit: contain
+
+        h3
+            line-height: 1
+            font-weight: 700
+            color: var(--white)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        h4
+            line-height: 1
+            font-weight: 700
+            margin-bottom: 1em
+            color: var(--dark-purple)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        p
+            font-size: 0.8em
+            color: var(--white)
+            margin-bottom: 0.5em
+
+            @media screen and ( width <= 50rem)
+                text-align: center
+
+            span
+                font-weight: 600
+                color: var(--dark-purple)
+
+        button
+            display: flex
+            margin-top: 1em
+            font-size: 0.8em
+            padding: 0.6em 2em
+            color: var(--white)
+            border-radius: 0.2em
+            flex-direction: column
+            background: linear-gradient(to right, var(--purple), var(--pale-blue))
