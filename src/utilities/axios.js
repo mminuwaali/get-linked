@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    timeout: 50000,
+    // timeout: 50000,
     baseURL: 'https://backend.getlinked.ai/hackathon',
 });
 
