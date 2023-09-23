@@ -8,7 +8,11 @@ export const register = createAsyncThunk('auth.slice/register', async data => aw
 
 const auth = createSlice({
     name: 'auth', // a unique name for identifying the reducer in the root reducer
-    reducers: ({}),
+    reducers: ({
+        resetSuccess: (state) => {
+            state.success = false;
+        },
+    }),
     initialState: ({ loading: false, error: false, user: null, success: false, }), // reducer's initial states
     extraReducers: ({ addCase }) => { // used for updating the states when fetching an api data and error handling
         addCase(login.pending, state => { state.loading = true; });
@@ -19,3 +23,4 @@ const auth = createSlice({
 });
 
 export default auth.reducer;
+export const { resetSuccess } = auth.actions;

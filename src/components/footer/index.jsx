@@ -18,9 +18,9 @@ export default function () {
         <div className="flex">
             <h3>Useful Links</h3>
             <div className="content">
-                <Link to='/'>Overview</Link>
-                <Link to='/'>Timeline</Link>
-                <Link to='/'>FAQs</Link>
+                <a href='#timeline'>Overview</a>
+                <a href='#timeline'>Timeline</a>
+                <a href='#faq'>FAQs</a>
                 <Link to='/register'>Register</Link>
 
                 <div className="social-links">
