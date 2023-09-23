@@ -1,4 +1,5 @@
 import $faq from '../components/faq';
+import $terms from '../components/terms';
 import $header from '../components/header';
 import $banner from '../components/banner';
 import $reward from '../components/reward';
@@ -15,5 +16,6 @@ export default function () {
         <$timeline />
         <$reward />
         <$partners />
+        <$terms />
     </>;
 };

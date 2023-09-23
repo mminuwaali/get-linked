@@ -1,0 +1,92 @@
+section#terms
+    gap: 2em
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    padding: 1em 10%
+
+    .flex
+        display: flex
+        flex: 1 0 20em
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+
+        img
+            width: 70%
+            height: 100%
+            margin: auto
+            object-fit: contain
+
+        h3
+            line-height: 1
+            font-weight: 700
+            color: var(--white)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        h4
+            line-height: 1
+            font-weight: 700
+            margin-bottom: 1em
+            color: var(--dark-purple)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        p, span
+            width: 80%
+            font-size: 0.8em
+            margin-bottom: 2em
+            color: var(--white)
+
+        .note
+            gap: 1em
+            padding: 3em
+            display: flex
+            margin-right: 2em
+            border-radius: .2em
+            flex-direction: column
+            background: rgba(255 255 255 / .05)
+            border: .1em solid var(--dark-purple)
+
+            @media screen and (width <= 50rem)
+                margin-right: 0
+                padding-inline: 2em
+                &>*
+                    text-align: center
+
+            p
+                width: 100%
+
+            h5
+                line-height: 1
+                font-weight: 700
+                color: var(--dark-purple)
+                font-size: clamp(1em, 1.6vw, 4em)
+
+            span
+                width: 100%
+                font-weight: 700
+                display: inline-block
+
+            ul
+                margin: 1em 0
+                color: var(--white)
+                list-style-position: inside
+                list-style-image: url("../../assets/icons/mark.svg")
+
+                @media screen and (width <= 50rem)
+                    text-align-last: left
+
+                li
+                    margin-top: 1em
+
+            button
+                width: 10em
+                margin: auto
+                display: flex
+                padding: 0.6em 0
+                font-size: 0.8em
+                align-items: center
+                color: var(--white)
+                border-radius: 0.2em
+                flex-direction: column
+                background: linear-gradient(to right, var(--purple), var(--pale-blue))

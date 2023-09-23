@@ -1,6 +1,7 @@
 export { default as faq } from './assets/images/faq.svg';
 export { default as logo } from './assets/icons/logo.svg';
 export { default as plus } from './assets/icons/plus.svg';
+export { default as lock } from './assets/images/lock.svg';
 export { default as banner } from './assets/images/banner/image.svg';
 export { default as rewardCup } from './assets/images/reward/cup.svg';
 export { default as partnersImage } from './assets/images/partners.svg';
