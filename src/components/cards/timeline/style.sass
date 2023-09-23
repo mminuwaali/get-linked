@@ -1,0 +1,66 @@
+.timeline-card
+    gap: 6em
+    flex: none
+    width: 100%
+    display: flex
+    padding: 2em 0
+    flex-wrap: wrap
+    position: relative
+    align-items: center
+    justify-content: center
+
+    @media screen and (width <= 50rem)
+        gap: 1em
+
+    .number
+        width: 2.5em
+        display: flex
+        aspect-ratio: 1
+        font-size: 1.2em
+        font-weight: 900
+        position: absolute
+        border-radius: 50%
+        color: var(--white)
+        align-items: center
+        justify-content: center
+        box-shadow: 0 0 0 1em var(--dark-blue)
+        background: linear-gradient(45deg, var(--dark-purple), var(--pale-blue))
+
+        @media screen and (width <= 50rem)
+            left: 0
+            bottom: 0
+            font-size: 0.8em
+            transform: translateX(-50%)
+
+    .flex
+        gap: 1em
+        width: 100%
+        display: flex
+        flex: 1 0 18em
+        flex-direction: column
+        justify-content: center
+
+        @media screen and (width <= 50rem)
+            padding-left: 2em
+
+        &:first-of-type
+            align-items: flex-end
+
+            @media screen and (width <= 50rem)
+                align-items: flex-start
+                justify-content: flex-end
+
+        &:last-of-type
+            align-items: flex-start
+
+            @media screen and (width <= 50rem)
+                justify-content: flex-start
+
+        h3
+            line-height: 1
+            font-weight: 700
+            color: var(--dark-purple)
+            font-size: clamp(1em, 1.6vw, 4em)
+
+        p
+            color: var(--white)

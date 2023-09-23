@@ -1,0 +1,47 @@
+section#timeline
+    gap: 1em
+    width: 100%
+    display: flex
+    padding: 1em 10%
+    position: relative
+    flex-direction: column
+
+    .header
+        gap: 1em
+        flex: none
+        width: 100%
+        display: flex
+        align-items: center
+        color: var(--white)
+        flex-direction: column
+        justify-content: center
+
+        h2
+            font-weight: 700
+            text-align: center
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        p
+            width: 18em
+            text-align: center
+
+    .content
+        gap: 1em
+        flex: 1 0
+        display: flex
+        padding: 2em 0
+        position: relative
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+
+        &::before
+            content: ''
+            width: .2em
+            position: absolute
+            height: calc(100% - 4em)
+            background: var(--dark-purple)
+
+            @media screen and (width <= 50rem)
+                left: 0
