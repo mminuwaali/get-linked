@@ -3,13 +3,14 @@ import { useState } from 'react';
 
 export default function ({ handleSubmit }) {
     const [data, setData] = useState({});
+    const [accept, setAccept] = useState(false);
 
     const handleUpdateData = ({ currentTarget: t }) => {
         setData(prev => ({ ...prev, [t.name]: t.value }));
     };
     const onSubmit = ev => {
         ev.preventDefault();
-        if (handleSubmit) handleSubmit?.(data);
+        if (handleSubmit) handleSubmit?.({ ...data, privacy_poclicy_accepted: accept });
         else alert("You forgot to set the handleSubmit prop");
     };
 
@@ -21,20 +22,20 @@ export default function ({ handleSubmit }) {
         </div>
         <div className="content">
             <div className="form-group">
-                <label htmlFor="team-name">Team's Name</label>
-                <input type="text" name='team-name' placeholder='Enter the name of your group' required />
+                <label htmlFor="team_name">Team's Name</label>
+                <input type="text" name='team_name' placeholder='Enter the name of your group' required />
             </div>
             <div className="form-group">
-                <label htmlFor="phone-number">Phone</label>
-                <input type="text" name='phone-number' placeholder='Enter your phone number' required />
+                <label htmlFor="phone_number">Phone</label>
+                <input type="text" name='phone_number' placeholder='Enter your phone number' required />
             </div>
             <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input type="email" name='email' placeholder='Enter your email address' required />
             </div>
             <div className="form-group">
-                <label htmlFor="project-topic">Project Topic</label>
-                <input type="text" name='project-topic' placeholder='What is your group project topic' required />
+                <label htmlFor="project_topic">Project Topic</label>
+                <input type="text" name='project_topic' placeholder='What is your group project topic' required />
             </div>
             <div className="form-group">
                 <label htmlFor="category">Category</label>
@@ -43,16 +44,14 @@ export default function ({ handleSubmit }) {
                 </select>
             </div>
             <div className="form-group">
-                <label htmlFor="group-size">Group Size</label>
-                <select name="group-size" required>
-                    <option value="" hidden>Select</option>
-                </select>
+                <label htmlFor="group_size">Group Size</label>
+                <input type="number" name="group_size" min={1} required />
             </div>
         </div>
         <div className="footer">
             <b>Please review your registration details before submitting</b>
             <span>
-                <input type="checkbox" />
+                <input type="checkbox" checked={accept} onChange={({ currentTarget }) => setAccept(currentTarget.checked)} />
                 I agreed with the event terms and conditions  and privacy policy
             </span>
             <button>Register Now</button>

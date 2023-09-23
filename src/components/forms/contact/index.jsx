@@ -27,13 +27,16 @@ export default function ({ handleSubmit }) {
         </div>
         <div className="content">
             <div className="form-group">
-                <input type="text" name='name' placeholder='First Name' required />
+                <input type="text" name='first_name' placeholder='First Name' required />
             </div>
             <div className="form-group">
                 <input type="email" name='email' placeholder='Mail' required />
             </div>
             <div className="form-group">
-                <textarea name="message" id="" placeholder='Message'></textarea>
+                <input type="number" name='phone_number' placeholder='Phone Number' required />
+            </div>
+            <div className="form-group">
+                <textarea name="message" placeholder='Message'></textarea>
             </div>
         </div>
         <div className="footer">
