@@ -18,7 +18,7 @@ export default function () {
             </div>
         </div>
         <div className="flex">
-            <img src={faq} alt="" className="faq-image" />
+            <img loading='lazy' src={faq} alt="" className="faq-image" />
         </div>
     </section>
 }

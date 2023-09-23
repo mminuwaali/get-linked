@@ -36,7 +36,7 @@ export default function () {
             </div>
         </div>
         <div className="flex">
-            <img src={lock} alt="" className="lock-image" />
+            <img loading='lazy' src={lock} alt="" className="lock-image" />
         </div>
     </section>
 }

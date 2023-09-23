@@ -6,7 +6,7 @@ import { logo, pin, phone, socialLinks } from '../../config';
 export default function () {
     return <footer>
         <div className="flex">
-            <Link to='/'><img src={logo} alt="" className="logo" /></Link>
+            <Link to='/'><img loading='lazy' src={logo} alt="" className="logo" /></Link>
             <p>
                 Getlinked Tech Hackathon is a technology innovation program
                 established by a group of organizations with the aim of showcasing
@@ -25,7 +25,7 @@ export default function () {
 
                 <div className="social-links">
                     <span>Follow us</span>
-                    {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img src={item.src} alt="" /></a>)}
+                    {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img loading='lazy' src={item.src} alt="" /></a>)}
                 </div>
             </div>
         </div>
@@ -33,11 +33,11 @@ export default function () {
             <h3>Contact Us</h3>
             <div className="content">
                 <a type='button'>
-                    <img src={phone} alt="" className="icon" />
+                    <img loading='lazy' src={phone} alt="" className="icon" />
                     +234 6707653444
                 </a>
                 <a type='button'>
-                    <img src={pin} alt="" className="icon" />
+                    <img loading='lazy' src={pin} alt="" className="icon" />
                     27,Alara Street Yaba 100012 Lagos State
                 </a>
             </div>

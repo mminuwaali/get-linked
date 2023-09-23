@@ -45,7 +45,7 @@ export default function ({ handleSubmit, loading }) {
         <div className="footer">
             <span>Share on</span>
             <div className="links">
-                {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img src={item.src} alt="" /></a>)}
+                {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img loading='lazy' src={item.src} alt="" /></a>)}
             </div>
         </div>
     </form>;

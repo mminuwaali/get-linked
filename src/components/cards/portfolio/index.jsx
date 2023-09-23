@@ -4,7 +4,7 @@ import { } from 'react';
 export default function ({ image, title, subTitle, description, attributes }) {
     return <div className="portfolio-card">
         <div className="flex">
-            <img src={image} alt="" />
+            <img loading='lazy' src={image} alt="" />
         </div>
         <div className="flex">
             <h3>{title}</h3>

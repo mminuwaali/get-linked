@@ -7,7 +7,7 @@ export default function ({ id, question, answer, open, setOpen }) {
     return <div className={`faq-card ${open ? 'open' : ''}`}>
         <div className="header">
             <span>{question}</span>
-            <img src={plus} alt="" onClick={() => setOpen(prev => prev == id ? null : id)} />
+            <img loading='lazy' src={plus} alt="" onClick={() => setOpen(prev => prev == id ? null : id)} />
         </div>
         <div className="content">
             <p></p>
