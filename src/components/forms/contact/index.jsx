@@ -1,6 +1,6 @@
 import './style.sass';
 import { useState } from 'react';
-import { twitter, facebook, instagram, linkedin } from '../../../config';
+import { socialLinks } from '../../../config';
 
 export default function ({ handleSubmit, loading }) {
     const [data, setData] = useState({});
@@ -45,10 +45,7 @@ export default function ({ handleSubmit, loading }) {
         <div className="footer">
             <span>Share on</span>
             <div className="links">
-                <a target='_blank' href="#"><img src={instagram} alt="" /></a>
-                <a target='_blank' href="#"><img src={twitter} alt="" /></a>
-                <a target='_blank' href="#"><img src={facebook} alt="" /></a>
-                <a target='_blank' href="#"><img src={linkedin} alt="" /></a>
+                {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img src={item.src} alt="" /></a>)}
             </div>
         </div>
     </form>;

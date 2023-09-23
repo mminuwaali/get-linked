@@ -1,7 +1,7 @@
 import './style.sass';
 import { } from 'react';
 import { Link } from 'react-router-dom';
-import { logo, pin, phone, instagram, facebook, twitter, linkedin } from '../../config';
+import { logo, pin, phone, socialLinks } from '../../config';
 
 export default function () {
     return <footer>
@@ -22,13 +22,10 @@ export default function () {
                 <Link to='/'>Timeline</Link>
                 <Link to='/'>FAQs</Link>
                 <Link to='/register'>Register</Link>
-                
+
                 <div className="social-links">
                     <span>Follow us</span>
-                    <a target='_blank' href="#"><img src={instagram} alt="" /></a>
-                    <a target='_blank' href="#"><img src={twitter} alt="" /></a>
-                    <a target='_blank' href="#"><img src={facebook} alt="" /></a>
-                    <a target='_blank' href="#"><img src={linkedin} alt="" /></a>
+                    {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img src={item.src} alt="" /></a>)}
                 </div>
             </div>
         </div>

@@ -17,9 +17,32 @@ export { default as linkedin } from './assets/icons/social/linkedin.svg';
 export { default as rewardMedal } from './assets/images/reward/medal.svg';
 export { default as instagram } from './assets/icons/social/instagram.svg';
 
+import twitter from './assets/icons/social/twitter.svg';
+import facebook from './assets/icons/social/facebook.svg';
+import linkedin from './assets/icons/social/linkedin.svg';
+import instagram from './assets/icons/social/instagram.svg';
 import portfolio1 from './assets/images/portfolio/portfolio1.svg';
 import portfolio2 from './assets/images/portfolio/portfolio2.svg';
 import portfolio3 from './assets/images/portfolio/portfolio3.svg';
+
+export const socialLinks = [
+    {
+        src: instagram,
+        href: "https://instagram.com",
+    },
+    {
+        src: twitter,
+        href: "https://twitter.com",
+    },
+    {
+        src: facebook,
+        href: "https://facebook.com",
+    },
+    {
+        src: linkedin,
+        href: "https://linkedin.com",
+    },
+];
 
 export const faqs = [
     {

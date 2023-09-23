@@ -1,8 +1,8 @@
 import './style.sass';
+import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import api from '../../../utilities/axios';
 import { male, female } from '../../../config';
-import { toast } from 'react-toastify';
 
 export default function ({ handleSubmit, loading }) {
     const [accept, setAccept] = useState(false);

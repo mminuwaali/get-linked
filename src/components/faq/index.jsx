@@ -14,7 +14,7 @@ export default function () {
                 We got answers to the questions that you might want to ask about getlinked Hackathon 1.0
             </p>
             <div className="questions">
-                {faqs.map((item, id) => <$faq key={item.question} {...item} id={id} open={open == id} setOpen={setOpen} />)}
+                {faqs.map((item, id) => <$faq key={id} {...item} id={id} open={open == id} setOpen={setOpen} />)}
             </div>
         </div>
         <div className="flex">
