@@ -6,6 +6,9 @@ div.portfolio-card
     padding: 3em 12%
     position: relative
 
+    @media screen and ( width <= 50rem)
+        padding: 3em 8%
+
     &::before, &::after
         z-index: 0
         content: ''
@@ -37,7 +40,7 @@ div.portfolio-card
     &:nth-child(3)
         &::before
             left: 0
-            top: 80%
+            top: 5em
             transform: translate(0%, -50%)
 
         &::after

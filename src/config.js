@@ -1,10 +1,39 @@
+export { default as faq } from './assets/images/faq.svg';
 export { default as logo } from './assets/icons/logo.svg';
+export { default as plus } from './assets/icons/plus.svg';
 export { default as banner } from './assets/images/banner/image.svg';
 export { default as bannerText } from './assets/images/banner/text.svg';
 
 import portfolio1 from './assets/images/portfolio/portfolio1.svg';
 import portfolio2 from './assets/images/portfolio/portfolio2.svg';
 import portfolio3 from './assets/images/portfolio/portfolio3.svg';
+
+export const faqs = [
+    {
+        question:"Can I work on a project I started before the hackathon?",
+        answer:"",
+    },
+    {
+        question:"What happens if I need help during the hackathon?",
+        answer:"",
+    },
+    {
+        question:"What happens if I don't have an idea for a project?",
+        answer:"",
+    },
+    {
+        question:"Can I join a team or do I have to come with one?",
+        answer:"",
+    },
+    {
+        question:"What happens after the hackathon ends",
+        answer:"",
+    },
+    {
+        question:"Can I work on a project I started before the hackathon?",
+        answer:"",
+    },
+];
 
 export const portfolios = [
     {

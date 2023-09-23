@@ -1,0 +1,34 @@
+.faq-card
+    flex: none
+    width: 100%
+    display: flex
+    flex-direction: column
+
+    &.open
+        border: none
+
+        img
+            filter: invert(1)
+            transform: rotate(225deg)
+
+    .header
+        gap: 1em
+        flex: none
+        width: 100%
+        display: flex
+        align-items: center
+        padding-bottom: 0.5em
+        justify-content: space-between
+        border-bottom: .2em solid var(--dark-purple)
+
+        span
+            font-size: 0.8em
+            font-weight: 500
+            color: var(--white)
+
+        img
+            width: 1em
+            height: 1em
+            cursor: pointer
+            transition: 300ms
+            object-fit: contain

@@ -1,0 +1,53 @@
+section#faq
+    gap: 4em
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    padding: 1em 12%
+
+    .flex
+        gap: .5em
+        z-index: 1
+        display: flex
+        flex: 1 0 20em
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            align-items: center
+        
+        img.faq-image
+            width: 100%
+            height: 100%
+            object-fit: contain
+
+        h3
+            line-height: 1
+            margin-top: 4em
+            font-weight: 700
+            color: var(--white)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        h4
+            line-height: 1
+            font-weight: 700
+            margin-bottom: 1em
+            color: var(--dark-purple)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+        p
+            width: 80%
+            margin-bottom: 1em
+            color: var(--white)
+
+            @media screen and ( width <= 50rem)
+                text-align: center
+
+        .questions
+            gap: 1em
+            flex: 1 0
+            width: 100%
+            display: flex
+            align-items: center
+            flex-direction: column
+            justify-content: flex-start
