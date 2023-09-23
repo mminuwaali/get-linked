@@ -7,12 +7,12 @@ export default function (props) {
     const [open, setOpen] = useState(0);
 
     return <header {...props}>
-        <img src={logo} alt="" className="logo" />
+        <Link to='/'><img src={logo} alt="" className="logo" /></Link>
         <nav className={open ? 'open' : ''}>
             <Link to="/">Timeline</Link>
             <Link to="/">Overview</Link>
             <Link to="/">FAQs</Link>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
             <Link to='/register' className='button'>Register</Link>
 
             <span className="close" onClick={() => setOpen(false)}>
