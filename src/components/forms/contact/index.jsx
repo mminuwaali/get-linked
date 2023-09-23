@@ -8,7 +8,7 @@ export default function ({ handleSubmit, loading, success, setSuccess }) {
     useEffect(() => {
         if (success) {
             setData({});
-            setSuccess(false);
+            setSuccess(0);
         }
     }, [success]);
 

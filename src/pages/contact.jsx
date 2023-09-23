@@ -12,7 +12,7 @@ export default function () {
         try {
             await api.post("contact-form", data);
             toast.success("Thank you, your response has been recorded successfully");
-            setSuccess(true);
+            setSuccess(1);
         } catch (error) {
             toast.error("Failed to submit the form data, something went wrong");
         }; setLoading(0);
