@@ -1,0 +1,80 @@
+footer
+    gap: 2em
+    flex: 1 0
+    z-index: 1
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    padding: 5em 8% 2em
+    background: rgba(0 0 0 /.4)
+
+    & *
+        color: var(--white)
+
+    .flex
+        gap: 1em
+        display: flex
+        flex: 1 0 16em
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+
+        &:first-child
+            flex-grow: 3
+
+        &:last-child
+            flex: none
+            width: 100%
+            align-items: center
+            justify-content: center
+
+        img
+            height: 2em
+            object-fit: contain
+
+        p
+            width: 90%
+            margin-bottom: 3em
+
+        span
+            b
+                color: var(--dark-purple)
+
+        h3
+            line-height: 1
+            font-weight: 700
+            color: var(--dark-purple)
+            font-size: clamp(1em, 1.4vw, 4em)
+
+        .content
+            flex: 1 0
+            gap: 0.5em
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+
+            a
+                width: 10em
+                display: flex
+
+                img.icon
+                    width: 1em
+                    height: 1em
+                    margin-right: 1em
+                    object-fit: contain
+
+            .social-links
+                gap: 1em
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: flex-start
+
+                span
+                    color: var(--dark-purple)
+
+                a
+                    width: 1em
+                    display: flex
+                    align-items: center
+                    justify-content: center

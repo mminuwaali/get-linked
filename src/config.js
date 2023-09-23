@@ -1,12 +1,18 @@
+export { default as pin } from './assets/icons/pin.svg';
 export { default as faq } from './assets/images/faq.svg';
 export { default as logo } from './assets/icons/logo.svg';
 export { default as plus } from './assets/icons/plus.svg';
 export { default as lock } from './assets/images/lock.svg';
+export { default as phone } from './assets/icons/phone.svg';
 export { default as banner } from './assets/images/banner/image.svg';
 export { default as rewardCup } from './assets/images/reward/cup.svg';
+export { default as twitter } from './assets/icons/social/twitter.svg';
 export { default as partnersImage } from './assets/images/partners.svg';
 export { default as bannerText } from './assets/images/banner/text.svg';
+export { default as facebook } from './assets/icons/social/facebook.svg';
+export { default as linkedin } from './assets/icons/social/linkedin.svg';
 export { default as rewardMedal } from './assets/images/reward/medal.svg';
+export { default as instagram } from './assets/icons/social/instagram.svg';
 
 import portfolio1 from './assets/images/portfolio/portfolio1.svg';
 import portfolio2 from './assets/images/portfolio/portfolio2.svg';

@@ -4,8 +4,23 @@ section#terms
     display: flex
     flex-wrap: wrap
     padding: 1em 10%
+    position: relative
+
+    &::before
+        top: 90%
+        left: 10%
+        z-index: 0
+        content: ''
+        aspect-ratio: 1
+        filter: blur(5em)
+        position: absolute
+        border-radius: 50%
+        width: max(40vw, 50vh)
+        transform: translate(-50%, -50%)
+        background: radial-gradient(circle at 50%, var(--pale-blue), var(--dark-blue), var(--dark-blue))
 
     .flex
+        z-index: 1
         display: flex
         flex: 1 0 20em
         flex-direction: column
