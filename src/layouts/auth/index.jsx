@@ -14,7 +14,7 @@ export default function ($element) {
             </div>
             <div className="auth-container">
                 <aside>
-                    <img loading='lazy' src={uri} alt="authentication image" className="auth-image" />
+                    <img loading='eager' src={uri} alt="authentication image" className="auth-image" />
                 </aside>
 
                 <main>

@@ -9,7 +9,7 @@ export default function (props) {
     const handleClick = () => { setOpen(0); };
 
     return <header {...props}>
-        <Link to='/'><img loading='lazy' src={logo} alt="" className="logo" /></Link>
+        <Link to='/'><img loading='eager' src={logo} alt="" className="logo" /></Link>
         <nav className={open ? 'open' : ''}>
             <a href="#timeline" onClick={handleClick}>Timeline</a>
             <a href="#portfolio" onClick={handleClick}>Overview</a>

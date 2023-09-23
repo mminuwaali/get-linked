@@ -8,6 +8,6 @@ export default function () {
         <p>
             Getlinked Hackathon 1.0 is honored to have the following major companies as its partners and sponsors
         </p>
-        <img loading='lazy' src={partnersImage} alt="" className="partners-image" />
+        <img loading='eager' src={partnersImage} alt="" className="partners-image" />
     </section>
 }

@@ -1,12 +1,18 @@
 import './style.sass';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { socialLinks } from '../../../config';
 
-export default function ({ handleSubmit, loading }) {
+export default function ({ handleSubmit, loading, success, setSuccess }) {
     const [data, setData] = useState({});
 
+    useEffect(() => {
+        if (success) {
+            setData({});
+            setSuccess(false);
+        }
+    }, [success]);
+
     const handleUpdateData = ({ currentTarget: t }) => {
-        console.log(t.name, t.value);
         setData(prev => ({ ...prev, [t.name]: t.value }));
     };
     const onSubmit = ev => {
@@ -29,13 +35,13 @@ export default function ({ handleSubmit, loading }) {
         </div>
         <div className="content">
             <div className="form-group">
-                <input type="text" name='first_name' placeholder='First Name' required onChange={handleUpdateData} />
+                <input type="text" value={data?.first_name || ''} name='first_name' placeholder='First Name' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
-                <input type="email" name='email' placeholder='Mail' required onChange={handleUpdateData} />
+                <input type="email" value={data?.email || ''} name='email' placeholder='Mail' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
-                <input type="number" name='phone_number' placeholder='Phone Number' required onChange={handleUpdateData} />
+                <input type="number" value={data?.phone_number || ''} name='phone_number' placeholder='Phone Number' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
                 <textarea name="message" placeholder='Message' rows={5} required onChange={handleUpdateData} />
@@ -45,7 +51,7 @@ export default function ({ handleSubmit, loading }) {
         <div className="footer">
             <span>Share on</span>
             <div className="links">
-                {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img loading='lazy' src={item.src} alt="" /></a>)}
+                {socialLinks.map(item => <a key={item.href} target='_blank' href={item.href}><img loading='eager' src={item.src} alt="" /></a>)}
             </div>
         </div>
     </form>;

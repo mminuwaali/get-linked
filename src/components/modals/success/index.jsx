@@ -7,7 +7,7 @@ export default function ({ visible, onClick }) {
     return createPortal(
         visible ?
             <div id='success-modal'>
-                <img loading='lazy' src={success} alt="" />
+                <img loading='eager' src={success} alt="" />
                 <h3>Congratulations</h3>
                 <h3>you have successfully Registered!</h3>
                 <p>

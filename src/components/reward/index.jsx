@@ -12,10 +12,10 @@ export default function () {
             </p>
         </div>
         <div className="flex">
-            <img loading='lazy' src={rewardCup} alt="" className='reward-cup' />
+            <img loading='eager' src={rewardCup} alt="" className='reward-cup' />
         </div>
         <div className="flex">
-            <img loading='lazy' src={rewardMedal} alt="" className="reward-medal" />
+            <img loading='eager' src={rewardMedal} alt="" className="reward-medal" />
         </div>
     </section>
 }

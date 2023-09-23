@@ -45,7 +45,7 @@ export default function ({ handleSubmit, loading, success }) {
             <span>
                 Be part of this movement!
                 <b>
-                    <img loading='lazy' src={female} alt="" /><img loading='lazy' src={male} alt="" />
+                    <img loading='eager' src={female} alt="" /><img loading='eager' src={male} alt="" />
                 </b>
             </span>
             <h2>CREATE YOUR ACCOUNT</h2>

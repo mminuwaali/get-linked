@@ -9,7 +9,7 @@ export default function () {
             <h2>Igniting a Revolution in HR Innovation</h2>
         </div>
         <div className="flex">
-            <img loading='lazy' src={bannerText} alt="" className="text" />
+            <img loading='eager' src={bannerText} alt="" className="text" />
             <p>
                 Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize
             </p>
@@ -21,7 +21,7 @@ export default function () {
             </div>
         </div>
         <div className="flex">
-            <img loading='lazy' src={banner} alt="banner image" className="banner" />
+            <img loading='eager' src={banner} alt="banner image" className="banner" />
         </div>
     </section>;
 };
