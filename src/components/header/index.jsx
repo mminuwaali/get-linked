@@ -1,18 +1,19 @@
 import './style.sass';
 import { useState } from 'react';
 import { logo } from '../../config';
+import {Link} from 'react-router-dom';
 
-export default function () {
+export default function (props) {
     const [open, setOpen] = useState(0);
 
-    return <header>
+    return <header {...props}>
         <img src={logo} alt="" className="logo" />
         <nav className={open ? 'open' : ''}>
-            <a href="#">Timeline</a>
-            <a href="#">Overview</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact</a>
-            <button>Register</button>
+            <Link to="/">Timeline</Link>
+            <Link to="/">Overview</Link>
+            <Link to="/">FAQs</Link>
+            <Link to="/">Contact</Link>
+            <Link to='/register' className='button'>Register</Link>
 
             <span className="close" onClick={() => setOpen(false)}>
                 <i />

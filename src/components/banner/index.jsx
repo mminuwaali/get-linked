@@ -1,5 +1,6 @@
 import './style.sass';
 import { } from 'react';
+import { Link } from 'react-router-dom';
 import { banner, bannerText } from '../../config';
 
 export default function () {
@@ -12,7 +13,7 @@ export default function () {
             <p>
                 Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize
             </p>
-            <button>Register</button>
+            <Link to='/register' className='button'>Register</Link>
             <div className="time">
                 <span>00<b>h</b></span>
                 <span>00<b>m</b></span>
