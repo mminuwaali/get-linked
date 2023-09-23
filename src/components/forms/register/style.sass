@@ -1,0 +1,61 @@
+form#register-form
+    gap: 1em
+    height: 100%
+    padding: 10%
+    display: flex
+    flex: 1 0 20em
+    color: var(--white)
+    border-radius: .5em
+    flex-direction: column
+    background: rgba(255 255 255 / .05)
+    box-shadow: 0 0 .5em rgba(0 0 0 / .02)
+
+    .head, .content, .footer
+        flex: none
+        width: 100%
+        display: flex
+        flex-direction: column
+
+    .content
+        gap: 1em
+        flex: 1 0 auto
+        flex-wrap: wrap
+        flex-direction: row
+
+        .form-group
+            gap: 0.5em
+            display: flex
+            flex: 1 0 12em
+            flex-direction: column
+            align-items: flex-start
+            justify-content: center
+
+            label
+                font-weight: 500
+
+            input, select
+                width: 100%
+                outline: none
+                font-size: .9em
+                padding: .6em 5%
+                border-radius: .2em
+                background: transparent
+                color: rgba(255 255 255 / .4)
+                border: .15em solid rgba(255 255 255 / .4)
+
+    .footer
+        gap: 0.5em
+
+        button
+            display: flex
+            font-size: 0.8em
+            padding: 1em 2em
+            margin-top: 0.5em
+            align-items: center
+            color: var(--white)
+            border-radius: 0.2em
+            flex-direction: column
+            background: linear-gradient(to right, var(--purple), var(--pale-blue))
+
+            &:disabled
+                background: gray

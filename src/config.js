@@ -2,6 +2,7 @@ export { default as pin } from './assets/icons/pin.svg';
 export { default as faq } from './assets/images/faq.svg';
 export { default as logo } from './assets/icons/logo.svg';
 export { default as plus } from './assets/icons/plus.svg';
+export { default as auth } from './assets/images/auth.svg';
 export { default as lock } from './assets/images/lock.svg';
 export { default as phone } from './assets/icons/phone.svg';
 export { default as banner } from './assets/images/banner/image.svg';
