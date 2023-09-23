@@ -1,3 +1,5 @@
+import { $contact } from "../components/forms";
+
 export default function () {
-    return <></>;
+    return <$contact />;
 };

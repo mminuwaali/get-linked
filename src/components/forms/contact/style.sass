@@ -1,0 +1,152 @@
+form#contact-form
+    gap: 1em
+    height: 100%
+    display: flex
+    flex: 1 0 24em
+    padding: 2em 15%
+    color: var(--white)
+    border-radius: .5em
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    background: rgba(255 255 255 / .05)
+    box-shadow: 0 .2em .2em rgba(0 0 0 / .05)
+
+    @media screen and ( width <= 50rem)
+        box-shadow: none
+        background: none
+
+    .head, .content, .footer
+        flex: none
+        width: 100%
+        display: flex
+        flex-direction: column
+
+    .head
+        h3
+            line-height: 1
+            font-weight: 700
+            margin-bottom: .5em
+            color: var(--dark-purple)
+            font-size: clamp(1.2em, 1.6vw, 4em)
+
+        p
+            display: none
+            line-height: 1
+
+            @media screen and ( width <= 50rem)
+                display: flex
+
+        span
+            font-size: 0.8em
+
+            b
+                margin-left: 1em
+                padding-inline: 2em
+                align-items: center
+                display: inline-flex
+                justify-content: center
+                border-bottom: .1em dotted var(--dark-purple)
+
+                img
+                    height: 1.2em
+                    object-fit: contain
+
+        h2
+            font-size: clamp(1.2em, 1.5vw, 4em)
+
+    .content
+        gap: 1em
+        flex: 1 0 auto
+        flex-direction: column
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            flex: none
+
+        .form-group
+            flex: none
+            gap: 0.5em
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: center
+
+            input, textarea
+                width: 100%
+                resize: none
+                outline: none
+                font-size: .9em
+                padding: .6em 5%
+                color: var(--white)
+                border-radius: .2em
+                background: transparent
+                border: .15em solid rgba(255 255 255 / .6)
+
+                &::placeholder
+                    color: rgba(255 255 255 / .7)
+        button
+            width: 12em
+            display: flex
+            cursor: pointer
+            font-size: 0.8em
+            padding: 1em 2em
+            margin-top: 0.5em
+            align-self: center
+            align-items: center
+            color: var(--white)
+            border-radius: 0.2em
+            flex-direction: column
+            background: linear-gradient(to right, var(--purple), var(--pale-blue))
+
+            &:disabled
+                background: var(--dark-blue)
+
+            i
+                flex: none
+                width: 1.8em
+                height: 1.8em
+                border-radius: 50%
+                border: .2em solid var(--dark-purple)
+                border-top-color: transparent
+                border-left-color: transparent
+                animation: spin 1s linear infinite
+
+                @keyframes spin
+                    from
+                        transform: rotate(0deg)
+                    to
+                        transform: rotate(360deg)
+
+    &.loading
+        .content
+            .form-group
+                input, select
+                    pointer-events: none
+
+    .footer
+        display: none
+        margin-top: 1em
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            display: flex
+
+        span
+            font-weight: 700
+            text-align: center
+            color: var(--dark-purple)
+
+        .links
+            gap: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+
+            a
+                width: .8em
+                display: flex
+                align-items: center
+                justify-content: center

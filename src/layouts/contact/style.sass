@@ -1,0 +1,96 @@
+section#contact
+    width: 100%
+    height: 100vh
+    overflow-x: hidden
+    position: relative
+
+    @media screen and (width <= 50rem)
+        padding-top: 4em
+
+    &::after, &::before
+        z-index: 0
+        content: ''
+        aspect-ratio: 1
+        filter: blur(5em)
+        position: absolute
+        border-radius: 50%
+        width: max(40vw, 50vh)
+        transform: translate(-50%, -50%)
+        background: radial-gradient(circle at 50%, var(--pale-blue), var(--dark-blue), var(--dark-blue))
+
+    &::after
+        top: 40%
+        left: 10%
+
+    &::before
+        top: 90%
+        left: 90%
+
+    header
+        @media screen and (width <= 50rem)
+            display: none
+
+    .header
+        top: 0
+        width: 100%
+        z-index: 100
+        display: flex
+        position: fixed
+        padding: 1em 10%
+        align-items: center
+        justify-content: flex-start
+
+        @media screen and (width >= 50rem)
+            display: none
+
+        a
+            width: 2em
+            height: 2em
+            border-radius: 50%
+            position: relative
+            background: linear-gradient(to right, var(--purple), var(--pale-blue))
+
+            &::before, &::after
+                content: ''
+                position: absolute
+
+            &::before
+                inset: 1px
+                border-radius: inherit
+                background: var(--dark-blue)
+
+            &::after
+                inset: 35%
+                border: .15em solid var(--white)
+                border-top-color: transparent
+                border-right-color: transparent
+                transform: translateX(30%) rotate(45deg)
+
+    .contact-container
+        height: 100%
+        display: flex
+        flex: 1 0 auto
+        flex-wrap: wrap
+        padding: 4em 12% 0
+        background: var(--dark-blue)
+
+        @media screen and (width <= 50rem)
+            padding: 0
+
+        aside
+            z-index: 1
+            display: flex
+            flex: 1 0 18em
+            align-items: center
+            justify-content: center
+
+            @media screen and (width <= 50rem)
+                display: none
+
+        main
+            z-index: 1
+            flex: 3 0 30em
+            padding: 2em 0 2em 10%
+
+            @media screen and (width <= 50rem)
+                padding: 0 !important

@@ -12,5 +12,6 @@ const pages = ({
 export default [
     { path: '*', name: '404', element: pages[404] },
     { path: '/', name: 'index', element: layouts.main(pages.index) },
+    { path: '/contact', name: 'contact', element: layouts.contact(pages.contact) },
     { path: '/register', name: 'register', element: layouts.auth(pages.register) },
 ];
