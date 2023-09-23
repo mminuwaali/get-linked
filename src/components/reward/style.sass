@@ -1,0 +1,133 @@
+section#reward
+    gap: 2em
+    display: flex
+    flex: 1 0 auto
+    flex-wrap: wrap
+    overflow: hidden
+    min-height: 20em
+    padding: 1em 10%
+    position: relative
+
+    @media screen and ( width <= 50rem)
+        padding-inline: 0
+
+    &::after, &::before
+        z-index: 0
+        content: ''
+        aspect-ratio: 1
+        filter: blur(5em)
+        position: absolute
+        border-radius: 50%
+        width: max(40vw, 50vh)
+        transform: translate(-50%, -50%)
+        background: radial-gradient(circle at 50%, var(--pale-blue), var(--dark-blue), var(--dark-blue))
+
+    &::after
+        top: 50%
+        left: 25%
+
+    &::before
+        top: 80%
+        left: 100%
+
+    &>*
+        z-index: 1
+
+    div.text
+        flex: none
+        width: 100%
+        display: flex
+        padding-left: 50%
+        margin-bottom: 3em
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            padding-left: 0
+            align-items: center
+
+            &>*
+                text-align: center
+
+        h3
+            line-height: 1
+            font-weight: 700
+            color: var(--white)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        h4
+            line-height: 1
+            font-weight: 700
+            margin-bottom: 1em
+            color: var(--dark-purple)
+            font-size: clamp(1.4em, 2.2vw, 4em)
+
+        p
+            width: 20em
+            color: var(--white)
+
+    .flex
+        gap: 1em
+        display: flex
+        flex: 1 0 20em
+        overflow: hidden
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+        @media screen and ( width <= 50rem)
+            align-items: center
+
+        &:last-of-type
+            flex: 2 0 24em
+
+        img
+
+            &.reward-cup
+                width: 90%
+
+            &.reward-medal
+                width: 100%
+                height: 100%
+                object-fit: contain
+
+                @media screen and ( width <= 50rem)
+                    width: 80%
+
+        p
+            width: 80%
+            font-size: 1.2em
+            color: var(--white)
+
+            @media screen and ( width <= 50rem)
+                text-align: center
+
+        button
+            display: flex
+            font-size: 0.8em
+            padding: 0.6em 3em
+            color: var(--white)
+            border-radius: 0.1em
+            flex-direction: column
+            background: linear-gradient(to right, var(--purple), var(--pale-blue))
+
+        .time
+            gap: 1em
+            width: 100%
+            display: flex
+            margin-top: 1em
+            align-items: center
+            justify-content: flex-start
+
+            @media screen and ( width <= 50rem)
+                justify-content: center
+
+            span
+                font-size: 3em
+                font-weight: 400
+                color: var(--white)
+                font-variant: small-caps
+
+                b
+                    font-size: 1rem

@@ -1,6 +1,7 @@
 import $faq from '../components/faq';
 import $header from '../components/header';
 import $banner from '../components/banner';
+import $reward from '../components/reward';
 import $timeline from '../components/timeline';
 import $portfolio from '../components/portfolio';
 
@@ -11,5 +12,6 @@ export default function () {
         <$portfolio />
         <$faq />
         <$timeline />
+        <$reward />
     </>;
 };
