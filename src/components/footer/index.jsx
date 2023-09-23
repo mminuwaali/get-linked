@@ -21,7 +21,8 @@ export default function () {
                 <Link to='/'>Overview</Link>
                 <Link to='/'>Timeline</Link>
                 <Link to='/'>FAQs</Link>
-                <Link to='/'>Register</Link>
+                <Link to='/register'>Register</Link>
+                
                 <div className="social-links">
                     <span>Follow us</span>
                     <a target='_blank' href="#"><img src={instagram} alt="" /></a>
