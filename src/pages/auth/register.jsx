@@ -1,12 +1,16 @@
 import { auth } from '../../config';
 import { $register } from '../../components/forms';
+import { useMyStore, useMyDispatch } from '../../store';
+import { useEffect } from 'react';
 
 export default function ({ setUri }) {
     setUri(auth);
-    
-    const handleSubmit = (data) => {
-        console.log(data);
-    };
+    const { register } = useMyDispatch();
+    const { auth: { loading, error } } = useMyStore();
 
-    return <$register handleSubmit={handleSubmit} />;
+    useEffect(() => {
+        if (error) console.log(error);
+    }, [error]);
+
+    return <$register loading={loading} handleSubmit={register} />;
 };

@@ -1,11 +1,8 @@
 section#auth
     width: 100%
     height: 100vh
-    overflow: hidden
+    overflow-x: hidden
     position: relative
-
-    @media screen and (width <= 50rem)
-        overflow-y: auto
 
     &::after, &::before
         z-index: 0
@@ -29,6 +26,18 @@ section#auth
     header
         @media screen and (width <= 50rem)
             display: none
+
+        nav
+            a.button
+                position: relative
+                background: linear-gradient(var(--pale-blue), var(--purple))
+
+                &::before
+                    inset: 2px
+                    z-index: 0
+                    content: ''
+                    position: absolute
+                    background: var(--dark-blue)
 
     .header
         top: 0
@@ -72,7 +81,7 @@ section#auth
 
         main
             z-index: 1
-            flex: 3 0 24em
+            flex: 3 0 30em
             padding: 2em 0 2em 10%
 
             @media screen and (width <= 50rem)

@@ -5,6 +5,8 @@ export { default as plus } from './assets/icons/plus.svg';
 export { default as auth } from './assets/images/auth.svg';
 export { default as lock } from './assets/images/lock.svg';
 export { default as phone } from './assets/icons/phone.svg';
+export { default as male } from './assets/icons/avatar/male.svg';
+export { default as female } from './assets/icons/avatar/female.svg';
 export { default as banner } from './assets/images/banner/image.svg';
 export { default as rewardCup } from './assets/images/reward/cup.svg';
 export { default as twitter } from './assets/icons/social/twitter.svg';

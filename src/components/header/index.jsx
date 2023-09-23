@@ -1,7 +1,7 @@
 import './style.sass';
 import { useState } from 'react';
 import { logo } from '../../config';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function (props) {
     const [open, setOpen] = useState(0);
@@ -13,7 +13,7 @@ export default function (props) {
             <Link to="/">Overview</Link>
             <Link to="/">FAQs</Link>
             <Link to="/contact">Contact</Link>
-            <Link to='/register' className='button'>Register</Link>
+            <Link to='/register' className='button'><span>Register</span></Link>
 
             <span className="close" onClick={() => setOpen(false)}>
                 <i />

@@ -17,6 +17,7 @@ export const useMyDispatch = () => {
 
     return ({
         login: data => dispatch(auth.login(data)),
+        register: data => dispatch(auth.register(data)),
     });
 };
 

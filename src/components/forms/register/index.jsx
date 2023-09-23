@@ -1,11 +1,29 @@
 import './style.sass';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import api from '../../../utilities/axios';
+import { male, female } from '../../../config';
+import { toast } from 'react-toastify';
 
-export default function ({ handleSubmit }) {
-    const [data, setData] = useState({});
+export default function ({ handleSubmit, loading }) {
     const [accept, setAccept] = useState(false);
+    const [categories, setCategories] = useState([]);
+    const [data, setData] = useState({ group_size: 1 });
+
+    useEffect(() => {
+        getGategories();
+    }, []);
+
+    const getGategories = async () => {
+        try {
+            let res = await api.get('categories-list');
+            setCategories(res.data);
+        } catch (error) {
+            toast.error("Failed to fetch categories");
+        };
+    };
 
     const handleUpdateData = ({ currentTarget: t }) => {
+        console.log(t.name, t.value);
         setData(prev => ({ ...prev, [t.name]: t.value }));
     };
     const onSubmit = ev => {
@@ -14,47 +32,55 @@ export default function ({ handleSubmit }) {
         else alert("You forgot to set the handleSubmit prop");
     };
 
-    return <form onSubmit={onSubmit} id="register-form">
+    return <form onSubmit={onSubmit} id="register-form" className={loading ? 'loading' : ''}>
         <div className="head">
             <h3>Register</h3>
-            <span>Be part of this movement!</span>
+            <span>
+                Be part of this movement!
+                <b>
+                    <img src={female} alt="" /><img src={male} alt="" />
+                </b>
+            </span>
             <h2>CREATE YOUR ACCOUNT</h2>
         </div>
         <div className="content">
             <div className="form-group">
                 <label htmlFor="team_name">Team's Name</label>
-                <input type="text" name='team_name' placeholder='Enter the name of your group' required />
+                <input type="text" name='team_name' placeholder='Enter the name of your group' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
                 <label htmlFor="phone_number">Phone</label>
-                <input type="text" name='phone_number' placeholder='Enter your phone number' required />
+                <input type="text" name='phone_number' placeholder='Enter your phone number' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" name='email' placeholder='Enter your email address' required />
+                <input type="email" name='email' placeholder='Enter your email address' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
                 <label htmlFor="project_topic">Project Topic</label>
-                <input type="text" name='project_topic' placeholder='What is your group project topic' required />
+                <input type="text" name='project_topic' placeholder='What is your group project topic' required onChange={handleUpdateData} />
             </div>
             <div className="form-group">
                 <label htmlFor="category">Category</label>
-                <select name="category" required>
+                <select name="category" required onChange={handleUpdateData}>
                     <option value="" hidden>Select your category</option>
+                    {categories.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
                 </select>
             </div>
             <div className="form-group">
                 <label htmlFor="group_size">Group Size</label>
-                <input type="number" name="group_size" min={1} required />
+                <input type="number" name="group_size" min={1} required defaultValue={1} onChange={handleUpdateData} />
             </div>
         </div>
         <div className="footer">
-            <b>Please review your registration details before submitting</b>
-            <span>
-                <input type="checkbox" checked={accept} onChange={({ currentTarget }) => setAccept(currentTarget.checked)} />
+            <i>Please review your registration details before submitting</i>
+            <span onClick={() => setAccept(!accept)}>
+                <input type="checkbox" checked={accept} onChange={() => null} />
                 I agreed with the event terms and conditions  and privacy policy
             </span>
-            <button>Register Now</button>
+            <button disabled={!accept} type='submit' title={accept ? '' : 'check to enable'}>
+                {loading ? <i /> : <><b>Register Now</b><b>Submit</b></>}
+            </button>
         </div>
     </form>;
 };

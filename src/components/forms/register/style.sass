@@ -1,20 +1,45 @@
 form#register-form
     gap: 1em
     height: 100%
-    padding: 10%
     display: flex
     flex: 1 0 20em
+    padding: 2em 10%
     color: var(--white)
     border-radius: .5em
     flex-direction: column
     background: rgba(255 255 255 / .05)
-    box-shadow: 0 0 .5em rgba(0 0 0 / .02)
+    box-shadow: 0 .2em .2em rgba(0 0 0 / .05)
 
     .head, .content, .footer
         flex: none
         width: 100%
         display: flex
         flex-direction: column
+
+    .head
+        h3
+            font-weight: 700
+            margin-bottom: .5em
+            color: var(--dark-purple)
+            font-size: clamp(1.2em, 2.4vw, 4em)
+
+        span
+            font-size: 0.8em
+
+            b
+                margin-left: 1em
+                padding-inline: 2em
+                align-items: center
+                display: inline-flex
+                justify-content: center
+                border-bottom: .1em dotted var(--dark-purple)
+
+                img
+                    height: 1.2em
+                    object-fit: contain
+
+        h2
+            font-size: clamp(1.2em, 1.5vw, 4em)
 
     .content
         gap: 1em
@@ -38,16 +63,50 @@ form#register-form
                 outline: none
                 font-size: .9em
                 padding: .6em 5%
+                color: var(--white)
                 border-radius: .2em
                 background: transparent
-                color: rgba(255 255 255 / .4)
-                border: .15em solid rgba(255 255 255 / .4)
+                border: .15em solid rgba(255 255 255 / .6)
+
+                &::placeholder
+                    color: rgba(255 255 255 / .4)
+                    
+
+                option
+                    color: var(--dark-purple)
+
+    &.loading
+        .content
+            .form-group
+                input, select
+                    pointer-events: none
 
     .footer
         gap: 0.5em
 
+        i
+            color: var(--dark-purple)
+
+        span
+            display: flex
+            line-height: 1
+            cursor: pointer
+            align-items: center
+            justify-content: flex-start
+
+            @media screen and ( width <= 50rem)
+                align-items: flex-start
+                font-size: 0.8em
+
+            input
+                margin-right: .5em
+
+                @media screen and ( width <= 50rem)
+                    margin-top: 0.3em
+
         button
             display: flex
+            cursor: pointer
             font-size: 0.8em
             padding: 1em 2em
             margin-top: 0.5em
@@ -57,5 +116,34 @@ form#register-form
             flex-direction: column
             background: linear-gradient(to right, var(--purple), var(--pale-blue))
 
+            b:last-child
+                display: none
+
             &:disabled
                 background: gray
+
+            @media screen and ( width <= 50rem)
+                width: 14em
+                align-self: center
+
+                b:first-child
+                    display: none
+
+                b:last-child
+                    display: flex
+
+            i
+                flex: none
+                width: 1.8em
+                height: 1.8em
+                border-radius: 50%
+                border: .2em solid var(--dark-purple)
+                border-top-color: transparent
+                border-left-color: transparent
+                animation: spin 1s linear infinite
+
+                @keyframes spin
+                    from
+                        transform: rotate(0deg)
+                    to
+                        transform: rotate(360deg)
